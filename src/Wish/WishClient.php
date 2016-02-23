@@ -197,6 +197,13 @@ class WishClient{
     $response = $this->getResponse('POST','variant/update',$params);
     return "success";
   }
+
+  public function changeProductVariationSKU($sku, $new_sku){
+    $params = array('sku'=>$sku, 'new_sku'=>$new_sku)
+    $response = $this->getResponse('POST','variant/change-sku',$params);
+    return "success"
+  }
+
   public function enableProductVariation(WishProductVariation $var){
     $this->enableProductVariationBySKU($var->sku);
   }
