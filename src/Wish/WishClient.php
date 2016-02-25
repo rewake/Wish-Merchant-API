@@ -127,7 +127,7 @@ class WishClient{
       'main_image',
       'extra_images'));
 
-    $response = $this->getResponse('POST','product/update',$object);
+    $response = $this->getResponse('POST','product/update',$params);
 
     return "success";
   }
