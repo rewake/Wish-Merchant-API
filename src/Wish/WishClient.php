@@ -169,6 +169,12 @@ class WishClient{
     return "success";
   }
 
+  public function updateShippingById($id,$country,$price){
+    $params = array('id'=>$id,'country'=>$country,'price'=>$price);
+    $response = $this->getResponse('POST','product/update-shipping',$params);
+    return "success";
+  }
+
   // PRODUCT VARIATION
 
   public function createProductVariation($object){

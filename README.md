@@ -2,7 +2,7 @@
 
 ## Documentation
 
-http://merchant.wish.com/documentation/api
+http://merchant.wish.com/documentation/api/v2
 
 ## Install Instructions
 
