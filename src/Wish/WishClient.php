@@ -175,6 +175,15 @@ class WishClient{
     return "success";
   }
 
+  public function getShippingById($id,$country){
+    $params = array('id'=>$id,'country'=>$country);
+    $response = $this->getResponse(
+      'GET',
+      'product/get-shipping',
+      $params);
+    return json_encode($response->getData());
+  }
+
   // PRODUCT VARIATION
 
   public function createProductVariation($object){
