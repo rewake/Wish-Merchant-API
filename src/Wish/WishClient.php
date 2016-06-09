@@ -184,6 +184,15 @@ class WishClient{
     return json_encode($response->getData());
   }
 
+  public function getAllShippingById($id){
+    $params = array('id'=>$id);
+    $response = $this->getResponse(
+      'GET',
+      'product/get-all-shipping',
+      $params);
+    return json_encode($response->getData());
+  }
+
   // PRODUCT VARIATION
 
   public function createProductVariation($object){
