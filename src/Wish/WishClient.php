@@ -379,4 +379,43 @@ class WishClient{
     return "success";
   }
 
+  // NOTIFICATION
+  public function getAllNotifications(){
+    $response = $this->getResponse('GET','noti/fetch-unviewed');
+     return $response->getData();
+  }
+
+  public function markNotificationAsViewed($id){
+    $params['id']=$id;
+    $response = $this->getResponse('POST','noti/mark-as-viewed',$params);
+    return $response->getData();
+  }
+
+  public function getUnviewedNotiCount(){
+     $response = $this->getResponse('GET','noti/get-unviewed-count');
+     return $response->getData();
+  }
+
+  public function getBDAnnouncemtns(){
+     $response = $this->getResponse('GET','fetch-bd-announcement');
+     return $response->getData();
+  }
+
+
+  public function getSystemUpdatesNotifications(){
+     $response = $this->getResponse('GET','fetch-sys-updates-noti');
+     return $response->getData();
+  }
+
+  public function getInfractionCount(){
+     $response = $this->getResponse('GET','count/infractions');
+     return $response->getData();
+  }
+
+  public function getInfractionLinks(){
+     $response = $this->getResponse('GET','get/infractions');
+     return $response->getData();
+  }
+
+
 }
