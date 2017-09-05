@@ -33,7 +33,7 @@ class WishRequest{
     $this->method = $method;
     $this->path = $path;
     $params['access_token'] = $session->getAccessToken();
-    if($session->getMerchantId())$params['merchant_id']=$session->merchant_id;
+    if($session->getMerchantId())$params['merchant_id']=$session->getMerchantId();
     $this->params = $params;
   }
 

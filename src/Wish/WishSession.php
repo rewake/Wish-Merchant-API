@@ -25,30 +25,31 @@ class WishSession{
   private static $api_key;
   private static $session_type;
   private static $merchant_id;
+  private static $access_token;
 
   public function __construct($access_token,$session_type,$merchant_id=null){
-    $this->access_token = $access_token;
-    $this->merchant_id = $merchant_id;
+    self::$access_token = $access_token;
+    self::$merchant_id = $merchant_id;
     switch($session_type){
       case 'sandbox':
-        $this->session_type = static::SESSION_SANDBOX;break;
+        self::$session_type = static::SESSION_SANDBOX;break;
       case 'prod':
-        $this->session_type = static::SESSION_PROD;break;
+        self::$session_type = static::SESSION_PROD;break;
       case 'stage':
-        $this->session_type = static::SESSION_STAGE;break;
+        self::$session_type = static::SESSION_STAGE;break;
       default:
         throw new InvalidArgumentException('Invalid session type');
     }
   }
 
   public function getAccessToken(){
-    return $this->access_token;
+    return self::$access_token;
   }
   public function getSessionType(){
-    return $this->session_type;
+    return self::$session_type;
   }
   public function getMerchantId(){
-    return $this->merchant_id;
+    return self::$merchant_id;
   }
 
 
